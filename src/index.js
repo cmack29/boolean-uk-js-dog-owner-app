@@ -1,35 +1,50 @@
 console.log(data);
 
-const ulE1 = document.querySelector("ul")
-
-function dogCard(data) {
-    
-    
-
-    let dogList = {}
-
-    for (let i = 0; i < data.length; i++) {
-        const dog = data[i]
-        const name = dog.name
-        const ID = dog.ID
-        const image = dog.image
-        
-
-        const gridEl = document.createElement('main')
-        document.body.append(gridEl)
-        gridE1.innerText = name
-
-        const imgEl = document.createElement('img')
-        document.body.append(imgEl)
-        imgEl.setAttribute("src", image)
+const mainDogEl = document.querySelector("section");
 
 
-        
-    }
+function selectedDog(doggie) {
+    h2El = document.querySelector('h2');
+    h2El.innerText = "const dogName";
+    mainDogEl.append(h2El);
 
-    return dogCard;
+    const imgEl = document.createElement('img');
+    imgEl.setAttribute('src','');
+    imgEl.setAttribute('alt', 'picture of a dog');
+    imgEl.setAttribute('height', '300');
+    imgEl.setAttribute('width', '400');
+    mainDogEl.append(imgEl);
+
+    const divEl = document.createElement('div');
+    divEl.setAttribute ('class', 'main__dog-section__desc');
+    mainDogEl.append(divEl);
+
+    const h3El = document.createElement('h3');
+    h3El.innerText = "I am the coolest";
+    const pEl = document.createElement('p');
+    pEl.innerText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, minima voluptates libero cumque rerum consequatur optio aliquid sint eum maxime illo laborum omnis quo ab rem cupiditate nulla perspiciatis ipsum!";
+    divEl.append(h3El, pEl);
+
+    const div2El = document.createElement('div');
+    div2El.className = 'main__dog-section__btn';
+    mainDogEl.append(div2El);
+
+
+    const p2El = document.createElement('p2');
+    p2El.innerHTML = "<em>Is naughty?</em> Yes!";
+    buttonEl = document.createElement('button');
+    buttonEl.innerText = "Good Dog!";
+
+    div2El.append(p2El, buttonEl);
+
+
 
 }
+
+const renderedSelectedDog = selectedDog(data[4]);
+console.log("renderedSelectedDog: ", renderedSelectedDog);
+
+mainDogEl.append(renderedSelectedDog);
 // WRITE YOUR CODE BELOW!
 // 1.0 bridge: <ul class="dogs-list"></ul>
 
